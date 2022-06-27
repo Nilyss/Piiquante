@@ -4,6 +4,4 @@ images/
 .DS_Store
 .npm
 .eslintcache
-package.json
-package-lock.json
 .idea/
