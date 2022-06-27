@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 /**
- * Creation du compte
+ * Create an account
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 
@@ -25,6 +25,13 @@ exports.signup = (req, res, next) => {
     })
     .catch((error) => res.status(500).json({ error }));
 };
+
+/**
+ * Connect to account
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
 
 exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })

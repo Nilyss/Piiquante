@@ -1,5 +1,13 @@
 const jwt = require("jsonwebtoken");
 
+/**
+ * Middleware for authentification. use json web token for security concern
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+
+
 module.exports = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(" ")[1];

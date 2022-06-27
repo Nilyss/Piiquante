@@ -14,6 +14,13 @@ const multer = require("../middleware/multer-config");
 const sauceController = require("../controllers/sauce");
 const likeController = require("../controllers/like");
 
+/**
+ * road router for sauce, authentification and  multer for images
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+
 // Roads
 router.post("/", auth, multer, sauceController.createSauce);
 router.get("/", auth, sauceController.getAllSauce);

@@ -1,5 +1,13 @@
 const mongoose = require("mongoose");
 
+/**
+ * Schema for create a sauce
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+
+
 const sauceSchema = mongoose.Schema({
   userId: {
     type: String,

@@ -1,6 +1,15 @@
 // Import models
 const Sauce = require("../models/sauce");
 // Controller
+
+/**
+ * like  methods   put
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+
+
 exports.likeSauce = (req, res, next) => {
   Sauce.findOne({ _id: req.params.id })
     .then((sauce) => {
