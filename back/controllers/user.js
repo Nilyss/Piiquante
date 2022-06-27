@@ -2,6 +2,12 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+/**
+ * Creation du compte
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
 exports.signup = (req, res, next) => {
   bcrypt
     .hash(req.body.password, 10)
@@ -15,7 +21,7 @@ exports.signup = (req, res, next) => {
         .then(() =>
           res.status(201).json({ message: "Création d'utilisateur réussi" })
         )
-        .catch((error) => res.status(400).json({ error }));
+        .catch((error) => res.status(400).json({ error :  'message : Le mot de passe sera validé que si il a de 8 a 15 caractères, au moins une lettre minuscule, au moins une lettre majuscule, au moins un chiffre, au moins un de ces caractères spéciaux: $ @ % * + - _ ! '}));
     })
     .catch((error) => res.status(500).json({ error }));
 };
@@ -35,7 +41,7 @@ exports.login = (req, res, next) => {
           res.status(200).json({
             userId: user._id,
             token: jwt.sign({ userId: user._id }, `${process.env.TOKEN}`, {
-              expiresIn: "24h",
+              expiresIn: "12h",
             }),
           });
         })
