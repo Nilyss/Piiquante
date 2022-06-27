@@ -1,5 +1,13 @@
 const multer = require("multer");
 
+/**
+ *  Init multer  for saving images
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+
+
 const MIME_TYPES = {
   "image/jpg": "jpg",
   "image/jpeg": "jpg",

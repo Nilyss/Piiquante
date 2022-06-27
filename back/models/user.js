@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 
+
+/**
+ * Schema for create a user. Regex for email and password verification
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ */
+
+
 const validateEmail = (email) => {
   const regexMail =/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
   return regexMail.test(email);
