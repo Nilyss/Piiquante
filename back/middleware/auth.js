@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     } else {
       next();
     }
-  } catch {
-    (error) => res.status(401).json({ error });
+  } catch (error) {
+    res.status(401).json({ error });
   }
 };
