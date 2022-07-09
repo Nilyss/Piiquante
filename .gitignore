@@ -4,3 +4,4 @@ images/
 .npm
 .eslintcache
 .idea/
+.env
